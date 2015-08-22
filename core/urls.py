@@ -18,5 +18,7 @@ import core.views as coreviews
 
 urlpatterns = patterns('',
 
- url(r'^$', coreviews.LandingView.as_view()),
+	url(r'^$', coreviews.LandingView.as_view()),
+ 	url(r'workplace/$', coreviews.WorkplaceListView.as_view()),
+ 	url(r'workplace/(?P<pk>\d+)/detail/$', coreviews.WorkplaceDetailView.as_view(), name='workplace_list'),
 )

@@ -47,12 +47,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Skyette Career</a>
+                <a class="navbar-brand page-scroll" href="/">Skyette Career</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    {% block navigation %}
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
@@ -60,7 +61,7 @@
                         <a class="page-scroll" href="#services">How It Works</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Rate Employer</a>
+                        <a class="page-scroll" href="#portfolio">Rate Workplace</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#about">About</a>
@@ -71,13 +72,14 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                    {% endblock %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-
+    {% block main_content %}
     <!-- Header -->
     <header>
         <div class="container">
@@ -442,7 +444,7 @@
             </div>
         </div>
     </section>
-
+    {% endblock %}
     <footer>
         <div class="container">
             <div class="row">
@@ -649,7 +651,7 @@
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="{% static "js/classie.js" %}"></script>
+    <script src="{% static "js/classie.js" %}"></script> 
     <script src="{% static "js/cbpAnimatedHeader.js" %}"></script>
 
     <!-- Contact Form JavaScript -->

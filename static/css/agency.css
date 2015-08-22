@@ -169,6 +169,10 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fff;
 }
 
+.main-content {
+    padding-top: 90px;
+}
+
 .navbar-default {
     border-color: transparent;
     background-color: #222;
@@ -209,7 +213,7 @@ fieldset[disabled] .btn-xl.active {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #fff;
+    color: #333333;
 }
 
 .navbar-default .nav li a:hover,

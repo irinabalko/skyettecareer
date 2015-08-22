@@ -1,0 +1,19 @@
+{% extends "base/theme.html" %}
+{% block main_content %}
+<div class="row main-content">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+	{% for workplace in object_list %}
+		<div class=''>
+		<h3><a href="{{ workplace.get_absolute_url }}">{{ workplace.title }}</a></h3>
+		{% if workplace.city %}<p style="display:inline; clear:none;"><b>Location: </b>{{ workplace.city }}, </p>{% endif %}
+		{% if workplace.state %}<p style="display:inline; clear:none;">{{ workplace.state }}, </p>{% endif %}
+		{% if workplace.country %}<p style="display:inline; clear:none;">{{ workplace.country }}</p>{% endif %} 
+		{% if workplace.website %}<p><b>Website: </b>{{ workplace.website }}</p>{% endif %}
+		<p>{{ workplace.description }}</p>
+		</div>
+	{% endfor %}
+	</div>
+	<div class="col-md-2"></div>
+</div>	
+{% endblock %}
