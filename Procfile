@@ -1,0 +1,1 @@
+web: gunicorn skyettecareer.wsgi --log-file -
