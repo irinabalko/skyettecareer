@@ -2,12 +2,85 @@
 {% block main_content %}
 <div class="row main-content">
 	<div class="col-md-2"></div>
-	<div class="col-md-8">
-		<div class "panel">
-		<h3>{{ workplace.title }}</h3>
-		<p>{{ workplace.description }}</p>
+		<div class="col-md-8">
+			<div class "row">
+				<div class="col-md-8">	
+					<h3><a href="{{ workplace.get_absolute_url }}">{{ workplace.title }}</a></h3>
+				</div>
+				<div class="col-md-4 text-right">
+					<h3>{% include 'base/rating.html' with rating=workplace.get_average_overall %}</h3>
+				</div>
+				<div class="col-md-12">		
+					{% if workplace.city %}<p style="display:inline; clear:none;"><b>Location: </b>{{ workplace.city }}, </p>{% endif %}
+					{% if workplace.state %}<p style="display:inline; clear:none;">{{ workplace.state }}, </p>{% endif %}
+					{% if workplace.country %}<p style="display:inline; clear:none;">{{ workplace.country }}</p>{% endif %} 
+					{% if workplace.website %}<p><b>Website: </b>{{ workplace.website }}</p>{% endif %}
+					<p>{{ workplace.description }}</p>
+				</div>
+			</div>
+			<div class="row main-content">
+				<div class="col-md-8" >
+				 	<p><b>Paid Parental Leave: </b></p>
+				</div>
+				<div class="col-md-4 text-right">
+				 	{% include 'base/rating.html' with rating=workplace.get_average_paid_parental_leave %}
+				</div>
+			</div>
+				<div class="row">
+					<div class="col-md-8">
+				 		<p><b>Female Rolemodels: </b></p>
+				 	</div>
+				 	<div class="col-md-4 text-right">
+				 		{% include 'base/rating.html' with rating=workplace.get_average_female_rolemodels %}
+				 	</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+				 		<p><b>Salary: </b></p>
+				 	</div>
+				 	<div class="col-md-4 text-right">
+				 		{% include 'base/rating.html' with rating=workplace.get_average_salary %}
+				 	</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+				 		<p><b>Flexible Hours: </b></p>
+				 	</div>
+				 	<div class="col-md-4 text-right">
+				 		{% include 'base/rating.html' with rating=workplace.get_average_flexible_hours %}
+				 	</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+				 		<p><b>Telecommuting: </b></p>
+				 	</div>
+				 	<div class="col-md-4 text-right">
+				 		{% include 'base/rating.html' with rating=workplace.get_average_telecommuting %}
+				 	</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+				 		<p><b>Equal Opportunities: </b></p>
+				 	</div>
+				 	<div class="col-md-4 text-right">
+				 		{% include 'base/rating.html' with rating=workplace.get_average_equal_opportunities %}
+				 	</div>
+				</div>
+				<div class="col-md-12">
+					<a type="button" href="{% url 'workplace_update' pk=workplace.id %}" class="btn btn-default pull-right">Edit</a>
+					{% if user_review %}
+					<a type="button" href="{% url 'review_update' pk=workplace.id %}" class="btn btn-default pull-right">Update Review</a>
+					{% else %}
+					<a type="button" href="{% url 'review_create' pk=workplace.id %}" class="btn btn-default pull-right">Create Review</a>
+					{% endif %}
+				</div>	
+				<div class="col-md-12">
+					{% for review in workplace.get_reviews %}
+						{% include 'base/review.html' with workplace=workplace %}
+					{% endfor %}	
+				</div>
+			</div>
 		</div>
-	</div>
 	<div class="col-md-2"></div>
 </div>	
 {% endblock %}

@@ -1,0 +1,57 @@
+<div class="row">
+	<div class="col-md-8">
+ 		<h3>Overall Rating</h3>
+ 	</div>
+ 	<div class="col-md-4 text-right">
+ 		<h2>{% include 'base/rating.html' with rating=review.overall %}</h2>
+ 	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+ 		<p><b>Paid Parental Leave: </b></p>
+ 	</div>
+ 	<div class="col-md-4 text-right">
+ 		{% include 'base/rating.html' with rating=review.paid_parental_leave %}
+ 	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+ 		<p><b>Female Rolemodels: </b></p>
+ 	</div>
+ 	<div class="col-md-4 text-right">
+ 		{% include 'base/rating.html' with rating=review.female_rolemodels %}
+ 	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+ 		<p><b>Salary: </b></p>
+ 	</div>
+ 	<div class="col-md-4 text-right">
+ 		{% include 'base/rating.html' with rating=review.salary %}
+ 	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+ 		<p><b>Flexible Hours: </b></p>
+ 	</div>
+ 	<div class="col-md-4 text-right">
+ 		{% include 'base/rating.html' with rating=review.flexible_hours %}
+ 	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+ 		<p><b>Telecommuting: </b></p>
+ 	</div>
+ 	<div class="col-md-4 text-right">
+ 		{% include 'base/rating.html' with rating=review.telecommuting %}
+ 	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+ 		<p><b>Equal Opportunities: </b></p>
+ 	</div>
+ 	<div class="col-md-4 text-right">
+ 		{% include 'base/rating.html' with rating=review.equal_opportunities %}
+ 	</div>
+</div>
+<p>{{ review.description }}</p>

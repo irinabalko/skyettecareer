@@ -2,8 +2,18 @@
 
 {% block navigation %}
 	<li>
-    	<a class="page-scroll" href="/">Find your workplace</a>
+    	<a class="page-scroll" href="/workplace/">Find Your Workplace</a>
     </li>
+    <li>
+    	<a class="page-scroll" href="/workplace/create/">Rate Your Workplace</a>
+    </li>
+{% endblock %}
+{% block search %}
+<form action="/search/" class="navbar-form navbar-right" method="get">
+ 	<div class="form-group">
+ 		<input type="text" placeholder="Search" class="form-control" name="query" autocomplete≠"off"></input>
+ 	</div>
+</form>
 {% endblock %}
 
 {% block main_content %}

@@ -20,5 +20,10 @@ urlpatterns = patterns('',
 
 	url(r'^$', coreviews.LandingView.as_view()),
  	url(r'workplace/$', coreviews.WorkplaceListView.as_view()),
+ 	url(r'search/$', coreviews.SearchListView.as_view()),
  	url(r'workplace/(?P<pk>\d+)/detail/$', coreviews.WorkplaceDetailView.as_view(), name='workplace_list'),
+ 	url(r'workplace/create/$', coreviews.WorkplaceCreateView.as_view()),
+ 	url(r'workplace/(?P<pk>\d+)/update/$', coreviews.WorkplaceUpdateView.as_view(), name='workplace_update'),
+ 	url(r'workplace/(?P<pk>\d+)/review/create/$', coreviews.ReviewCreateView.as_view(), name='review_create'),
+ 	url(r'workplace/(?P<pk>\d+)/review/update/$', coreviews.ReviewUpdateView.as_view(), name='review_update'),
 )
